@@ -12,8 +12,8 @@ module seven_seg_driver(
   reg [3:0] BCD_digit;
   
   // ------
-  always @(posedge clk or posedge rst) begin
-    if (rst) begin
+  always @(posedge clk or negedge rst) begin
+    if (!rst) begin
       clk_div       <= 16'd0;
       digit_select <= 2'b00;
     end else begin
