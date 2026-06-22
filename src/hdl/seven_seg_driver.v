@@ -13,7 +13,7 @@ module seven_seg_driver(
   
   // ------
   always @(posedge clk or posedge rst) begin
-    if (rst) begin
+    if (!rst) begin
       clk_div       <= 16'd0;
       digit_select <= 2'b00;
     end else begin
